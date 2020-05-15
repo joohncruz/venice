@@ -1,0 +1,17 @@
+@import '~@venice/styles/core';
+
+.container {
+  width: 100%;
+}
+
+.bullet {
+  width: 16px;
+  height: 16px;
+  background: #007fd8;
+}
+
+.bullet-active {
+  width: 10px;
+  height: 10px;
+  background: #c4c4c4;
+}

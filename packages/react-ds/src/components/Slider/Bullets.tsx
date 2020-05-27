@@ -1,11 +1,28 @@
 import React, { FC } from 'react'
 
-const Bullet = () => <li></li>
+import styles from './core/Slider.module.scss'
 
-const Bullets: FC<{}> = () => {
+const Bullet: FC<{
+  slide: number
+  onClickFunc: Function
+  isCurrent: boolean
+}> = ({ onClickFunc, slide, isCurrent }) => (
+  <li
+    className={`${styles.bullet} ${isCurrent && styles.active}`}
+    onClick={() => onClickFunc(slide)}
+  />
+)
+
+const Bullets: FC<{
+  slidesCount: number
+  current: number
+  goTo: Function
+}> = ({ slidesCount, current, goTo }) => {
   return (
-    <ul>
-      <Bullet />
+    <ul className={styles.bullets}>
+      {Array.from({ length: slidesCount }, (_, i) => (
+        <Bullet isCurrent={current === i} slide={i} onClickFunc={goTo} />
+      ))}
     </ul>
   )
 }

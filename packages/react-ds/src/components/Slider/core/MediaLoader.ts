@@ -1,4 +1,4 @@
-export class MediaLoader {
+export default class MediaLoader {
   image!: HTMLImageElement
   video!: HTMLVideoElement
   resolve!: Function

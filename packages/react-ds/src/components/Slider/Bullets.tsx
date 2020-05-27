@@ -17,9 +17,10 @@ const Bullets: FC<{
   slidesCount: number
   current: number
   goTo: Function
-}> = ({ slidesCount, current, goTo }) => {
+  width: number
+}> = ({ slidesCount, current, goTo, width }) => {
   return (
-    <ul className={styles.bullets}>
+    <ul style={{ width }} className={styles.bullets}>
       {Array.from({ length: slidesCount }, (_, i) => (
         <Bullet isCurrent={current === i} slide={i} onClickFunc={goTo} />
       ))}

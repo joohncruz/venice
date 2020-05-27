@@ -141,6 +141,7 @@ const Slider: FC<ISlider> = ({
       </Buttons>
       {bullets && (
         <Bullets
+        width={state.sliderWidth}
           slidesCount={React.Children.count(children)}
           current={state.currentSlide.content}
           goTo={goTo}
